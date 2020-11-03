@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\athen\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\athen\\.nuget\\packages"
+    ]
+  }
+}
