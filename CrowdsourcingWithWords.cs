@@ -22,21 +22,7 @@
         {
 
 
-            var wordCloud = new WordCloud(500, 500, true, Color.White, 50, 1);
-            List<String> words = new List<string>
-           {
-               "Holiday", "Hotel Balfour", "Torrevieja", "disappointment", "letter",
-                "compensation", "brochure", "complaints", "representative", "resort",
-                "matter", "return home", "response", "problems", "distress", "result" };
-
-            List<int> frequencies = new List<int> { 4,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1 };
-
-            var myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
-            myBitmap.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/TP2 - Sentimental Analysis/SentimentalAnalysis/Test.jpg");
-            //.C:\Users\athen\OneDrive\Documents\EPF\5A\IA\TP2 - Sentimental Analysis\SentimentalAnalysis\ResultsWords.cs
-
-
-            var data = Datum.LoadData(Path.Combine("Data", "weatherTweets.tsv.gz"));
+           var data = Datum.LoadData(Path.Combine("Data", "weatherTweets.tsv.gz"));
 
 			// Run model and get results
 			var VocabularyOnSubData = ResultsWords.BuildVocabularyOnSubdata((List<Datum>)data);

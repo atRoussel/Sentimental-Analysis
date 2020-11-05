@@ -249,26 +249,92 @@ namespace CrowdsourcingWithWords
                     }
                 }
                 writer.WriteLine();
-                var wordCloud = new WordCloud(500, 500, true, Color.White, 50, 1);
+
+                //Create wordCloud
+                var wordCloudPositif = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
+                var wordCloudNegatif = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
+                var wordCloudNeutral = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
+                var wordCloud = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
+
+                //Create ListWords
+                List<String> wordsPositif = new List<string> { };
+                List<String> wordsNegatif = new List<string> { };
+                List<String> wordsNeutral = new List<string> { };
+                List<String> words = new List<string> { };
+
+                //Create ListFrequencies
+                List<int> frequenciesPositif = new List<int> { };
+                List<int> frequenciesNegatif = new List<int> { };
+                List<int> frequenciesNeutral = new List<int> { };
+                List<int> frequencies = new List<int> { };
+
+                //Create Bitmap
+                Bitmap myBitmapPositif = null;
+                Bitmap myBitmapNegatif = null;
+                Bitmap myBitmapNeutral = null;
+                Bitmap myBitmap = null;
+
                 writer.WriteLine($"Main classes:");
                 foreach (var wordByClass in classifiedWords.GroupBy(classified => classified.Value.Key))
                 {
                     writer.WriteLine($"Class {wordByClass.Key}:");
-                  
-                    
-                    List<String> words = new List<string> {" "};
-                    List<int> frequencies = new List<int> { };
+
+
                     foreach (var word in wordByClass.OrderByDescending(w => w.Value.Value))
                     {
                         writer.WriteLine($"\t{word.Key}");
-                        words.Add($"{word.Key}");
-                        frequencies.Add(1);
+                        if (wordByClass.Key == "Negative")
+                        {
+
+                            wordsNegatif.Add($"{word.Key}");
+                            frequenciesNegatif.Add(1);
+                        }
+                        else if(wordByClass.Key == "Neutral")
+                        {
+                            wordsNeutral.Add($"{word.Key}");
+                            frequenciesNeutral.Add(1);
+                        }
+                        else if (wordByClass.Key == "Positive")
+                        {
+                            wordsPositif.Add($"{word.Key}");
+                            frequenciesPositif.Add(1);
+                        }
+                        else if (wordByClass.Key == "NotRelated")
+                        {
+                            words.Add($"{word.Key}");
+                            frequencies.Add(1);
+                        }
+
                     }
 
-                    //var myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
-                    //myBitmap.Save($"C:/Users/athen/OneDrive/Documents/EPF/5A/IA/TP2 - Sentimental Analysis/SentimentalAnalysis/{wordByClass.Key}.jpg");
+
+     
                 }
-                
+
+                //Creation wordCloud Positif
+                myBitmapPositif = new Bitmap(wordCloudPositif.Draw(wordsPositif, frequenciesPositif));
+                Console.WriteLine(myBitmapPositif);
+                Console.WriteLine();
+                myBitmapPositif.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Positive.jpg");
+
+                //Creation wordCloud Negatif
+                myBitmapNegatif = new Bitmap(wordCloudNegatif.Draw(wordsNegatif, frequenciesNegatif));
+                Console.WriteLine(myBitmapNegatif);
+                Console.WriteLine();
+                myBitmapNegatif.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Negative.jpg");
+
+                //Creation wordCloud Neutral
+                myBitmapNeutral = new Bitmap(wordCloudNeutral.Draw(wordsNeutral, frequenciesNeutral));
+                Console.WriteLine(myBitmapNeutral);
+                Console.WriteLine();
+                myBitmapNeutral.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Neutral.jpg");
+
+                //Creation wordCloud NotRelated
+                myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
+                Console.WriteLine(myBitmap);
+                Console.WriteLine();
+                myBitmap.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/notRelated.jpg");
+
             }
         }
 

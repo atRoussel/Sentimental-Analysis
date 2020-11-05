@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {}
+    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\Sentimental-Analysis\\SentimentalAnalysis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {
+    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\Sentimental-Analysis\\SentimentalAnalysis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
+        "projectUniqueName": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\Sentimental-Analysis\\SentimentalAnalysis.csproj",
         "projectName": "SentimentalAnalysis",
-        "projectPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
+        "projectPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\Sentimental-Analysis\\SentimentalAnalysis.csproj",
         "packagesPath": "C:\\Users\\athen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\obj\\",
+        "outputPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\Sentimental-Analysis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\athen\\AppData\\Roaming\\NuGet\\NuGet.Config",
