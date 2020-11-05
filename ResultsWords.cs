@@ -251,27 +251,31 @@ namespace CrowdsourcingWithWords
                 writer.WriteLine();
 
                 //Create wordCloud
-                var wordCloudPositif = new WordCloud.WordCloud(500, 500, true);
+                var wordCloudPositif = new WordCloud.WordCloud(500, 500, true) ;
                 var wordCloudNegatif = new WordCloud.WordCloud(500, 500, true);
                 var wordCloudNeutral = new WordCloud.WordCloud(500, 500, true);
+                var wordCloudUnknown = new WordCloud.WordCloud(500, 500, true);
                 var wordCloud = new WordCloud.WordCloud(500, 500, true);
 
                 //Create ListWords
                 List<String> wordsPositif = new List<string> { };
                 List<String> wordsNegatif = new List<string> { };
                 List<String> wordsNeutral = new List<string> { };
+                List<String> wordsUnknown = new List<string> { };
                 List<String> words = new List<string> { };
 
                 //Create ListFrequencies
                 List<int> frequenciesPositif = new List<int> { };
                 List<int> frequenciesNegatif = new List<int> { };
                 List<int> frequenciesNeutral = new List<int> { };
+                List<int> frequenciesUnknown = new List<int> { };
                 List<int> frequencies = new List<int> { };
 
                 //Create Bitmap
                 Bitmap myBitmapPositif = null;
                 Bitmap myBitmapNegatif = null;
                 Bitmap myBitmapNeutral = null;
+                Bitmap myBitmapUnknown = null;
                 Bitmap myBitmap = null;
 
                 writer.WriteLine($"Main classes:");
@@ -304,6 +308,11 @@ namespace CrowdsourcingWithWords
                             words.Add($"{word.Key}");
                             frequencies.Add(1);
                         }
+                        else if (wordByClass.Key == "Unknown")
+                        {
+                            wordsUnknown.Add($"{word.Key}");
+                            frequenciesUnknown.Add(1);
+                        }
 
                     }
 
@@ -323,9 +332,14 @@ namespace CrowdsourcingWithWords
                 myBitmapNeutral = new Bitmap(wordCloudNeutral.Draw(wordsNeutral, frequenciesNeutral));
                 myBitmapNeutral.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Neutral.jpg");
 
+                //Creation wordCloud Unkown
+                myBitmapUnknown = new Bitmap(wordCloudUnknown.Draw(wordsUnknown, frequenciesUnknown));
+                myBitmapUnknown.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Unknown.jpg");
+
                 //Creation wordCloud NotRelated
                 myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
                 myBitmap.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/notRelated.jpg");
+
 
             }
         }
