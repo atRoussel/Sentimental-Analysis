@@ -5,12 +5,16 @@
 using Microsoft.ML.Probabilistic.Distributions;
 using Microsoft.ML.Probabilistic.Math;
 using Microsoft.ML.Probabilistic.Utilities;
+using WordCloud;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using WordCloud;
+using System.Drawing;
+using System.Drawing.Imaging;
+
+
 
 namespace CrowdsourcingWithWords
 {
@@ -22,6 +26,7 @@ namespace CrowdsourcingWithWords
         /// <summary>
         /// The posterior of the word probabilities for each true label.
         /// </summary>
+
         public Dirichlet[] ProbWords
         {
             get;
@@ -244,15 +249,24 @@ namespace CrowdsourcingWithWords
                     }
                 }
                 writer.WriteLine();
+                var wordCloud = new WordCloud(500, 500, true, Color.White, 50, 1);
                 writer.WriteLine($"Main classes:");
                 foreach (var wordByClass in classifiedWords.GroupBy(classified => classified.Value.Key))
                 {
                     writer.WriteLine($"Class {wordByClass.Key}:");
+                  
+                    
+                    List<String> words = new List<string> {" "};
+                    List<int> frequencies = new List<int> { };
                     foreach (var word in wordByClass.OrderByDescending(w => w.Value.Value))
                     {
                         writer.WriteLine($"\t{word.Key}");
+                        words.Add($"{word.Key}");
+                        frequencies.Add(1);
                     }
 
+                    //var myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
+                    //myBitmap.Save($"C:/Users/athen/OneDrive/Documents/EPF/5A/IA/TP2 - Sentimental Analysis/SentimentalAnalysis/{wordByClass.Key}.jpg");
                 }
                 
             }

@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.ML.Probabilistic" Version="0.3.1912.403" />
     <PackageReference Include="Microsoft.ML.Probabilistic.Compiler" Version="0.3.1912.403" />
     <PackageReference Include="Microsoft.ML.Probabilistic.Learners" Version="0.3.1912.403" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
     <PackageReference Include="WordCloud" Version="1.0.0.3" />
   </ItemGroup>
 

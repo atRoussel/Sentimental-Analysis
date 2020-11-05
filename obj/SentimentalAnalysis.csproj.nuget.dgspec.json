@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {}
+    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {
+    "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
+        "projectUniqueName": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
         "projectName": "SentimentalAnalysis",
-        "projectPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
+        "projectPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\SentimentalAnalysis.csproj",
         "packagesPath": "C:\\Users\\athen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\SentimentalAnalysis\\obj\\",
+        "outputPath": "C:\\Users\\athen\\OneDrive\\Documents\\EPF\\5A\\IA\\TP2 - Sentimental Analysis\\SentimentalAnalysis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\athen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,10 @@
             "Microsoft.ML.Probabilistic.Learners": {
               "target": "Package",
               "version": "[0.3.1912.403, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             },
             "WordCloud": {
               "target": "Package",
