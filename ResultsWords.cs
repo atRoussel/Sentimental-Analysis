@@ -251,10 +251,10 @@ namespace CrowdsourcingWithWords
                 writer.WriteLine();
 
                 //Create wordCloud
-                var wordCloudPositif = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
-                var wordCloudNegatif = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
-                var wordCloudNeutral = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
-                var wordCloud = new WordCloud.WordCloud(500, 500, true, Color.White, 50, 1);
+                var wordCloudPositif = new WordCloud.WordCloud(500, 500, true);
+                var wordCloudNegatif = new WordCloud.WordCloud(500, 500, true);
+                var wordCloudNeutral = new WordCloud.WordCloud(500, 500, true);
+                var wordCloud = new WordCloud.WordCloud(500, 500, true);
 
                 //Create ListWords
                 List<String> wordsPositif = new List<string> { };
@@ -313,26 +313,18 @@ namespace CrowdsourcingWithWords
 
                 //Creation wordCloud Positif
                 myBitmapPositif = new Bitmap(wordCloudPositif.Draw(wordsPositif, frequenciesPositif));
-                Console.WriteLine(myBitmapPositif);
-                Console.WriteLine();
                 myBitmapPositif.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Positive.jpg");
 
                 //Creation wordCloud Negatif
                 myBitmapNegatif = new Bitmap(wordCloudNegatif.Draw(wordsNegatif, frequenciesNegatif));
-                Console.WriteLine(myBitmapNegatif);
-                Console.WriteLine();
                 myBitmapNegatif.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Negative.jpg");
 
                 //Creation wordCloud Neutral
                 myBitmapNeutral = new Bitmap(wordCloudNeutral.Draw(wordsNeutral, frequenciesNeutral));
-                Console.WriteLine(myBitmapNeutral);
-                Console.WriteLine();
                 myBitmapNeutral.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/Neutral.jpg");
 
                 //Creation wordCloud NotRelated
                 myBitmap = new Bitmap(wordCloud.Draw(words, frequencies));
-                Console.WriteLine(myBitmap);
-                Console.WriteLine();
                 myBitmap.Save("C:/Users/athen/OneDrive/Documents/EPF/5A/IA/Sentimental-Analysis/WordClouds/notRelated.jpg");
 
             }
